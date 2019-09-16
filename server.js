@@ -7,7 +7,7 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27018/Profile'); 
+mongoose.connect(process.env.MONGO || 'mongodb://localhost:27017/Profile'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
