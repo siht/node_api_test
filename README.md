@@ -28,7 +28,7 @@ node server.js
 
 ### docker users
 
-donwload this repo [src repo here] and inside that folder paste the whole project an rename to src
+donwload this [repo](https://github.com/siht/basic_node_docker) and inside that folder paste the whole project an rename to src
 run in terminal
 
 ```bash
