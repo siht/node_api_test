@@ -1,7 +1,8 @@
 'use strict';
-module.exports = function(app) {
-  var profiles = require('../controllers/profileController');
 
+var profiles = require('../controllers/profileController');
+
+module.exports = function(app) {
   // profiles Routes
   app.route('/profiles')
     .get(profiles.list_all_profiles);
