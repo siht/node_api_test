@@ -7,6 +7,7 @@ exports.list_all_profiles = function(req, res) {
   Profile.find({},
     function(err, profile) {
       if (err){
+        console.error(err);
         res.status(400).send(err);
       }
       res.json(profile);
@@ -19,6 +20,7 @@ exports.create_a_profile = function(req, res) {
   new_profile.save(
     function(err, profile) {
       if (err){
+        console.error(err);
         res.status(400).send(err);
       }
       res.json(profile);
@@ -31,6 +33,7 @@ exports.read_a_profile = function(req, res) {
     eq.params.profileId,
     function(err, profile) {
       if (err){
+        console.error(err);
         res.status(400).send(err);
       }
       res.json(profile);
@@ -45,6 +48,7 @@ exports.update_a_profile = function(req, res) {
     {new: true},
     function(err, profile) {
       if (err){
+        console.error(err);
         res.status(400).send(err);
       }
       res.json(profile);
@@ -57,6 +61,7 @@ exports.delete_a_profile = function(req, res) {
     {_id: req.params.profileId},
     function(err, profile) {
       if (err){
+        console.error(err);
         res.status(400).send(err);
       }
       res.json({ message: 'Profile successfully deleted' });
