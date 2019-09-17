@@ -6,7 +6,10 @@ var express = require('express'),
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO || 'mongodb://localhost:27017/Profile'); 
+mongoose.connect(
+  process.env.MONGO || 'mongodb://localhost:27017/Profile',
+  { useNewUrlParser: true }
+); 
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
