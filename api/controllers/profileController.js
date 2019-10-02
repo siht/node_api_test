@@ -42,7 +42,7 @@ exports.read_a_profile = function(req, res) {
 };
 
 exports.update_a_profile = function(req, res) {
-  Profile.findOneAnUpdate(
+  Profile.findOneAndUpdate(
     {_id: req.params.profileId},
     req.body,
     {new: true},
