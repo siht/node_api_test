@@ -26,7 +26,15 @@ app.use(bodyParser.json());
 //   res.status(404).send({url: req.originalUrl + ' not found'})
 // });
 
-var routes = require('./api/routes/profileRoutes'); //importing route
-routes(app); //register the route
+var profileRoutes = require('./api/routes/profileRoutes');
+var uploadRoutes = require('./otherUrls/uploadImages');
+uploadRoutes(app);
+profileRoutes(app);
+
+// app._router.stack.forEach(function(r){
+//   if (r.route && r.route.path){
+//     console.log(r.route.path)
+//   }
+// })
 
 app.listen(port);
